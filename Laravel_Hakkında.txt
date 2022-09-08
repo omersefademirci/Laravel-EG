@@ -1,0 +1,28 @@
+	Laravel
+
+1- First -> cmd -> composer global require/installer
+
+2- For Creat Project -> cmd -> laravel new Name
+
+3- Projeyi uygulamada açıktan sonra -> .env dosyasında DB_DATABASE karşısına phpByAdmin de oluşturulan veritabanı adı girilir.
+
+4- APP_URL => http://localhost
+
+5- Projeyi kaldırmak için -> php artisan serve
+
+6- Projeyi kaldırırken vs code nin terminalinde hata alırsan
+	* Bilgisayarım -> özellikler -> Gelişmiş sistem ayarları -> Ortam Değişkenleri -> 
+	* Yol Değişkenine -> C:\xampp\php yolunu ekle
+ 
+7- Terminal kapandığında ayağa kalkan projede kapanır.
+
+8- php artisan make: oluşturmak
+
+9- php artisan make:controller Ornek -> s takısı kullanılmıyor. 
+	controller klasörü içerisinde ornek oluşturuluyor.
+	Yeni bir controoller oluşturmak istediğinde cmd ile oluştur.
+	Klasör de new diyip file oluşturduğunda iç yapısnı oluşturmuyor.
+
+10- php port değiştirme
+
+	* php artisan serve --port=9000
