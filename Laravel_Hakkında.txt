@@ -26,3 +26,16 @@
 10- php port değiştirme
 
 	* php artisan serve --port=9000
+
+
+**********************************
+
+Migration Oluşturma
+bilgiler -> dosya ismi
+--create=bilgiler  -> tablo ismi
+=> php artisan make:migration bilgiler --create=bilgiler
+
+**migration oluşturduktan sonra bunları vt ye kaydetmek için;
+php artisan migrate
+
+

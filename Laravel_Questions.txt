@@ -1,0 +1,16 @@
+
+Sorular
+
+1.Soru
+Migration oluşturduktan sonra bunlar vt ye kaydetmemiz için şu komutu çağırıyoruz:
+-> php artisan migrate 
+daha önceden migration var ise hata veriyor ama yok ise çalışıyor bunu update gibi bir seçeniğimiz varmı nasıl oluyor?
+
+***********************
+
+2.Soru
+Db ile çoğu işlemi kendimiz yapıyoruz 
+Model ile veritabanı ekleme yaparken boş bırakılan alanı kendisi otamatik dolduruluyor 
+
+biz hangisini kullanıyoruz?
+
