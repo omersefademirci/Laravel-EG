@@ -69,17 +69,21 @@ Route::get('/kitaplar',function(){
     // }
     //dd($b);
 });
-// 07.09.2022
+//
 Route::get('/kitap/ekle',[App\Http\Controllers\kitapController::class,'create']);
 Route::post('/kitap/ekle',[App\Http\Controllers\kitapController::class,'store'])->name('kitap.ekle.post');
 
 
+// Mail - Gönderme
+
+Route::get('/mailgonder',[App\Http\Controllers\MailController::class,'send']);
 
 
 
 
 
-Route::get('/', function () {
+
+Route::get('/', function () { 
     return view('index'); 
 });
 Route::get('/app',function(){
