@@ -5,8 +5,8 @@
         Tip 2: you can also add an image using data-image tag
     -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="{{route('admin.index')}}" class="simple-text">
+                    Library Project
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -18,13 +18,31 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./user.html">
+                        <a href="{{route('admin.yayinevi.index')}}">
                             <i class="material-icons">person</i>
-                            <p>User Profile</p>
+                            <p>Publishing Houses</p>
                         </a>
                     </li>
                     <li>
-                        <a href="./table.html">
+                        <a href="{{route('admin.yazar.index')}}">
+                            <i class="material-icons">person</i>
+                            <p>Writers</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.kitap.index')}}">
+                            <i class="material-icons">content_paste</i>
+                            <p>Books</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.kategoriler.index')}}">
+                            <i class="material-icons">content_paste</i>
+                            <p>Categories</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
                             <i class="material-icons">content_paste</i>
                             <p>Table List</p>
                         </a>
@@ -56,7 +74,7 @@
                     <li class="active-pro">
                         <a href="upgrade.html">
                             <i class="material-icons">unarchive</i>
-                            <p>Upgrade to PRO</p>
+                            <p>Go to the WEB</p>
                         </a>
                     </li>
                 </ul>
