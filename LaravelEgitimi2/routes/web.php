@@ -5,17 +5,16 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\layouts;
 use App\Http\Controllers\kitapController;
 
+/*Ajax */
+Route::get('/ajax',function(){
+    return view('ajax');
+});
+Route::post('ajax/post',function(){
+    return "sefa";
+})->name('ajax.post');
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/*  Ajax Son */
+
 Route::get('/kitaplar',function(){
 /*
     // \App\Models\Kitap::create(['id'=>22,'name'=>'Harry Potter - Felsefe Taşı 5','yazarid'=>1]);
@@ -36,12 +35,6 @@ Route::get('/kitaplar',function(){
     }
     */
 
-
-
-
-
-
-
 /********************* */
     // $x =\App\Models\Yazarlarl::find(1)->kitap;
     // // dd($x);
@@ -49,19 +42,15 @@ Route::get('/kitaplar',function(){
     // foreach($x as $key=>$value){
     //     echo $value['name'].'<br>';
     // }
-
-
-
     /******************************* */
     //id'si 1 olanı seçiyoruz
-
-//     $x=App\Models\Kitap::updateOrCreate
-//     (
-//         ['name'=>'Harry Potter - Lanetli Çocuk'],
-//         ['yazarid'=>6]
-//     );
-//   dd($x);
-
+/*    $x=App\Models\Kitap::updateOrCreate
+     (
+         ['name'=>'Harry Potter - Lanetli Çocuk'],
+        ['yazarid'=>6]
+    );
+   dd($x);
+*/
 /*********************** */
     // $b = \App\Models\Kitap::get();
     // foreach($b as $user){
@@ -72,17 +61,8 @@ Route::get('/kitaplar',function(){
 //
 Route::get('/kitap/ekle',[App\Http\Controllers\kitapController::class,'create']);
 Route::post('/kitap/ekle',[App\Http\Controllers\kitapController::class,'store'])->name('kitap.ekle.post');
-
-
 // Mail - Gönderme
-
 Route::get('/mailgonder',[App\Http\Controllers\MailController::class,'send']);
-
-
-
-
-
-
 Route::get('/', function () { 
     return view('index'); 
 });
@@ -110,7 +90,6 @@ Route::get('/users',function(){
         echo '</div>';
 
     });
-
 */
 /*
 $users=\Illuminate\Support\Facades\DB::table('users')->count();
@@ -126,9 +105,5 @@ $users=\Illuminate\Support\Facades\DB::table('users')->count();
      // $users=\Illuminate\Support\Facades\DB::table('users')->select('id','name','surname')->get() ;
     
 */
-
-
-
-
 });
 
