@@ -43,7 +43,7 @@
 
                                         </tbody>
                                     </table>
-                                   
+                                    <a style="padding:20px 50px; margin:10px;float:right;background-color:#6a2076;color:white;border-radius:10px"  href="{{route('admin.yazar.create')}}">Ekle</a>
                                 </div>
                                 <div class="row ">
                                      @if(session("status"))

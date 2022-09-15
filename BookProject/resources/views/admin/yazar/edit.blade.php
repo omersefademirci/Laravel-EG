@@ -24,8 +24,8 @@
                                                 <div class="form-group label-floating is-empty">
                                                     <p style="font-weight:bold">Yazar Görseli</p>
                                                     @if($data[0]['image']!="")
-                                                    <img src="{{asset($data[0]['image'])}}" style="width:120px;height:120px; display:block;" alt="">
-                                                    @endif
+                                                        <img src="{{asset($data[0]['image'])}}" style="width:120px;height:120px; display:block;" alt="">
+                                                        @endif
                                                     
                                                     <input style="opacity:1; position:inherit;top:30px;display:inline-block;width:20%" type="file" name="image"></input>
                                                     

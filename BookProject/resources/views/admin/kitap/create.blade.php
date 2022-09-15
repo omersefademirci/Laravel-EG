@@ -41,6 +41,18 @@
                                         <div class="row" >
                                             <div class="col-md-6">
                                                 <div class="form-group label-floating">
+                                                    <p class="category">Kategori Seçiniz</p>
+                                                    <select name="kategoriid" id="" class="form-control">
+                                                        @foreach($kategori as $key=>$value)
+                                                            <option value="{{$value['id']}}">{{$value['name']}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>               
+                                        </div>
+                                        <div class="row" >
+                                            <div class="col-md-6">
+                                                <div class="form-group label-floating">
                                                     <p class="category">Yazar Seçiniz</p>
                                                     <select name="yazarid" id="" class="form-control">
                                                         @foreach($yazar as $key=>$value)

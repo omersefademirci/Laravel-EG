@@ -36,9 +36,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.kategoriler.index')}}">
+                        <a href="{{route('admin.kategori.index')}}">
                             <i class="material-icons">content_paste</i>
                             <p>Categories</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.slider.index')}}">
+                            <i class="material-icons">content_paste</i>
+                            <p>Sliders</p>
                         </a>
                     </li>
                     <li>

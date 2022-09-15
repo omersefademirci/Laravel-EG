@@ -18,6 +18,7 @@ class CreateKitaplarsTable extends Migration
             $table->string('name');
             $table->string('selflink');
             $table->integer('yazarid');
+            $table->integer('kategoriid');
             $table->integer('yayineviid');
             $table->string('image');
             $table->double('fiyat');

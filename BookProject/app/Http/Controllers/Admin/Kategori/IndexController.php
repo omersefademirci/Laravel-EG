@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin\Kategori;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kategoriler;
-use Helper\mHelper;
+use App\Helper\mHelper;
 
 class IndexController extends Controller
 {

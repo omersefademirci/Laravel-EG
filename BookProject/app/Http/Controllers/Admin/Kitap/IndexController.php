@@ -8,6 +8,7 @@ use App\Models\Kitaplar;
 use App\Models\Yayinevi;
 use App\Models\Yazarlar;
 use App\Helper\mHelper;
+use App\Models\Kategoriler;
 use App\Helper\ImageUpload;
 use Illuminate\Support\Facades\File;
 class IndexController extends Controller
@@ -22,7 +23,8 @@ class IndexController extends Controller
         
         $yazar=Yazarlar::all();
         $yayinevi=Yayinevi::all();
-        return view('admin.kitap.create',['yazar'=>$yazar,'yayinevi'=>$yayinevi]);
+        $kategori=Kategoriler::all();
+        return view('admin.kitap.create',['yazar'=>$yazar,'kategori'=>$kategori,'yayinevi'=>$yayinevi]);
     }
     public function store(Request $request){
         $all=$request->except('_token');
