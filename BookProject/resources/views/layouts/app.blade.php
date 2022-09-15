@@ -28,24 +28,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
-					<div class="drop">
-						<div class="box">
-							<select tabindex="4" class="dropdown drop">
-								<option value="" class="label">Dollar :</option>
-								<option value="1">Dollar</option>
-								<option value="2">Euro</option>
-							</select>
+					
+						<div class="drop">
+							<div class="box">
+								
+							<a href="">Giriş Yap</a>
+							</div>
+							<div class="box1">
+								<a href="">Kayıt Ol</a>
+							</div>
+							<div class="clearfix"></div>
 						</div>
-						<div class="box1">
-							<select tabindex="4" class="dropdown">
-								<option value="" class="label">English :</option>
-								<option value="1">English</option>
-								<option value="2">French</option>
-								<option value="3">German</option>
-							</select>
-						</div>
-						<div class="clearfix"></div>
-					</div>
+					
 				</div>
 				<div class="col-md-6 top-header-left">
 					<div class="cart box_1">
