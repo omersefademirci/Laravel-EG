@@ -1,0 +1,88 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
+
+//Stroge - 1
+Route::get('/', function () {
+   echo '<form action="/post" enctype="multipart/form-data" method="POST">'.csrf_field(); 
+        
+        echo '<input type="file" multiple name="photos[]">
+        <button>Post</button>
+        </form>';
+    
+});
+//Tek foto
+/*
+Route::post('/post',function(Request $request){
+      //  $file=$request->file('photo')->store('photos');
+      $file=$request->file('photo');
+      $filename="resim.".$file->getClientOriginalExtension();
+      $path=$file->storeAs('photos',$filename);
+      dd($path);
+});
+*/
+//Çoklu Foto
+/*
+Route::post('/post',function(Request $request){
+      $images=$request->file('photos');
+      
+      $path=[];
+      foreach($images as $image){
+            
+            $name="123-".rand(1,90).'.'.$image->getClientOriginalExtension();
+            $file=$image->storeAs('photos',$name);
+            //$file=$image->store('photos');
+            $path[]=$file;
+      }
+      dd($path);
+
+});*/
+
+//Dosya Kontrolü
+Route::post('/post',function(Request $request){
+     //Görsel kontrol işlemi
+      $control =Storage::disk('local')->exists('photos/123-17.jpg');
+
+      //    Dosya oluşturma
+     // Storage::put('photos/file.txt','Udemy');
+
+      //    Ekleme işlemi 
+    //  Storage::append('photos/file.txt','Udemy2');
+      //dd($control);
+
+      //    Dosya kontrol işlemi
+    //  $c=Storage::exists('photos/file.txt');
+     
+
+      //    Dosya indirme işlemi
+      //return Storage::download('file.txt','name-alanı');
+
+      //url alma
+    //$url=Storage::url('file.txt');
+    //$dd(url);
+
+    //Dosya boyutu alma // byte türünde geliyo
+    //$url=Storage::size('file.txt');
+    //dd($url);
+
+      // Son dEğişklik tarhini görme
+      //unix type set türünde veriyor -> 
+    //$url=date("Y-m-d H.i:s",Storage::lastModified('file.txt'));
+    //dd($url);
+
+    //Dosya Kopyalama
+      //$url=Storage::copy('file.txt','/photos/file2.txt');
+      //dd($url);
+
+      //Dosya Taşıma
+      //$url=Storage::move('photos//file2.txt','storage/app/');
+      //dd($url);
+
+      //Dosya silme
+      $url=Storage::delete('file.txt');
+      dd($url);
+
+});

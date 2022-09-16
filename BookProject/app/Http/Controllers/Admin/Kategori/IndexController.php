@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kategoriler;
 use App\Helper\mHelper;
+use Yajra\DataTables\Facedes\DataTables;
 
 class IndexController extends Controller
 {
@@ -77,5 +78,14 @@ class IndexController extends Controller
             return redirect('/');
          }
 
+    }
+    public function getData(Request $request){
+
+        $x=DataTables::of(Kategoriler::query())
+            ->addColumn('edit',function($x){
+                return '<a>href="'.route('admin.kategori.edit',['id'=>$x->id]).'">Duzenle/<a>';
+            })->make(true);
+
+        return $x; 
     }
 }

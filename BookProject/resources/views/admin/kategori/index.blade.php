@@ -34,26 +34,18 @@
                                         </tbody>     
                                     </table>
                                    */?>
-                                    <table id="example" class="display" style="width:100%">
+                                    <table id="#example" class="display" style="width:100%">
                                         <thead>
                                             <tr>
+                                                <th>Id</th>
                                                 <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Extn.</th>
-                                                <th>Start Date</th>
-                                                <th>Salary</th>
+                                                <th>Email</th>
+                                                <th>Created At</th>
+                                                <th>Updated At</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
-                                        <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Extn.</th>
-                                                <th>Start Date</th>
-                                                <th>Salary</th>
-                                            </tr>
+                                        
                                         </tfoot>
                                     </table>
                                     
@@ -77,10 +69,12 @@
             </div>
 @endsection
 @section('footer')
+   
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-    <script>
-        $('#example').DataTable({
+
+   <script>
+         $('#example').DataTable({
             lenghtMenu:[[25, 100, -1],[25, 100, "All"]],
             processing:true,
             serverSide:true,
@@ -95,4 +89,23 @@
             ]
         )};
     </script>
+            
+            <script>
+                /*
+$(function() {
+    $('#users-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! route('admin.kategori.getData') !!}',
+        columns: [
+            { data: 'id', name: 'id' },
+            { data: 'name', name: 'name' },
+            { data: 'email', name: 'email' },
+            { data: 'created_at', name: 'created_at' },
+            { data: 'updated_at', name: 'updated_at' }
+        ]
+    });
+});
+*/
+</script>
 @endsection

@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Yayinevi\IndexController;
 use App\Http\Controllers\Admin\Yazar\IndexController as YazarIndexController;
 use App\Http\Controllers\Admin\Kategori\IndexController as KategoriIndexController;
-use App\Http\Controllers\Admin\Slide\IndexController as SliderIndexController;
+use App\Http\Controllers\Admin\Slider\IndexController as SliderIndexController;
+use App\Http\Controllers\Admin\Kitap\IndexController as KitapIndexController;
 use App\Http\Controllers\Front\IndexController as FrontIndexController;
 use App\Http\Controllers\Front\Kitap\IndexController as FKIndexController ;
 
@@ -49,6 +50,7 @@ Route::prefix('admin')->namespace('admin')->as('admin.')->group(function () {
         Route::get('/duzenle/{id}',[KategoriIndexController::class,'edit'])->name('edit');
         Route::post('/duzenle/{id}',[KategoriIndexController::class,'update'])->name('edit.post');
         Route::get('/sil/{id}',[KategoriIndexController::class,'delete'])->name('delete');
+        Route::get('/getData',[KategoriIndexController::class,'getData'])->name('getData');
     });
     Route::prefix('slider')->namespace('slider')->as('slider.')->group(function(){
         Route::get('/',[SliderIndexController::class,'index'])->name('index');
