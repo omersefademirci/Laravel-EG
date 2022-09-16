@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facedes\Cache;
+use App\Models\User;
+use App\Events\BlogAdded;
 
 //Stroge - 1
-Route::get('/', function () {
+Route::get('/get', function () {
    echo '<form action="/post" enctype="multipart/form-data" method="POST">'.csrf_field(); 
         
         echo '<input type="file" multiple name="photos[]">
@@ -40,7 +42,6 @@ Route::post('/post',function(Request $request){
       dd($path);
 
 });*/
-
 //Dosya Kontrolü
 Route::post('/post',function(Request $request){
      //Görsel kontrol işlemi
@@ -86,3 +87,29 @@ Route::post('/post',function(Request $request){
       dd($url);
 
 });
+
+//Laravel - Veri Depolama -Listeleme Görme ve Kontrol Etme - Cache 
+
+Route::get('/cache',function(){
+      //key,value,saniye-kaç saniye kalsın
+      Cache::put('site_name','omersefademirci.com',120);
+      echo Cache::get('site_name');
+});
+
+//Laravel - Event Listener
+
+Route::get('/user-ekle',function(){
+     $user= User::create([
+      'name'=>'Sefa',
+      'password'=>'sefa1234',
+      'email'=>'omersefademirci@gmail.com',
+      
+     ]);
+     event(new BlogAdded($user));
+});
+
+Route::resource('/post',\App\Http\Controllers\PhotoController::class)
+      //Route model binding-> bulunamadağı zaman belirtildiği sayfaya atar.
+      ->missing(function(Request $request){
+            return Redirect::route('post.index');
+      });

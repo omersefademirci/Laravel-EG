@@ -4,17 +4,6 @@ Sorular
 
 
 
-1.Soru
---Bu şekilde çalışıyor, ama sürekli bu şekilde yapmak doğru mu ?
-Route::prefix('admin')->namespace('admin')->as('admin')->group(function () {
-    Route::get('/', [App\Http\Controllers\Admin\IndexController::class, 'index']);
-    // ... other controllers from User namespace
-});
------------
---İnternette araştırırken şu şekilde kullanımımını gördüm ama çalıştıramadım
-Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->as('admin')->group(function () {
-    Route::get('/', [IndexController::class, 'index']);
-    // ... other controllers from User namespace
-});
-
+1)Cache kullanımımı
+2)Datatable kullanımı
 
