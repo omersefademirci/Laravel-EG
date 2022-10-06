@@ -6,4 +6,5 @@ Sorular
 
 1)Cache kullanımımı
 2)Datatable kullanımı
-
+3)companent kullanımı
+4)session neden kullanılıyor, kullanım alanları ne

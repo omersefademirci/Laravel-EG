@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facedes\Cache;
 use App\Models\User;
 use App\Events\BlogAdded;
+use App\Http\Controllers\PostController;
 
 //Stroge - 1
 Route::get('/get', function () {
@@ -109,7 +110,65 @@ Route::get('/user-ekle',function(){
 });
 
 Route::resource('/post',\App\Http\Controllers\PhotoController::class)
+
+
       //Route model binding-> bulunamadağı zaman belirtildiği sayfaya atar.
       ->missing(function(Request $request){
             return Redirect::route('post.index');
-      });
+});
+
+
+Route::get('/response',function(){
+      return response('Hello World',200)->header('Content-type','text/plain');
+});
+Route::get('/deneme',function(){
+      return view('index');
+});
+
+//Blade
+
+Route::get('/blade',function(){
+      $name="Ömer Sefa";
+      $surname="Demirci";
+      return view('blades',compact('name','surname'));
+
+});
+
+//Session
+Route::get('/session',function(){
+    //  session(['sitename'=>'abc.com']);
+     // session()->save();
+
+     //     kontrol etme
+     // dd(session()->has('sitename'));
+      
+     //     ekleme
+    // session()->push('user.name','developers');
+
+    //      session -> arttırma - eksiltme
+    //session(['count'=>1]);
+    //      arttırma
+    //session()->increment('count',3);
+    //      eksiltme
+    //session()->decrement('count',1);  
+    //dd(session("count"));
+     //dd(session("sitename","omersefademirci.com"));
+
+     dd(session()->all());
+     
+     //     sitename silme
+     //session()->forget("sitename");
+     //session()->save();
+     
+     //     komple session silme
+     //session()->flush('sitename');
+
+     //     session geçerlilik tarihi alma 
+     //session()->invalidate();
+
+
+     
+});
+
+//validation
+Route::resource('/post',PostController::class);

@@ -46,6 +46,7 @@ class IndexController extends Controller
 
     }
     public function update(Request $request){
+        
         $id=$request->route('id');
         $c=Kategoriler::where('id','=',$id)->count();
         if($c!=0){       
