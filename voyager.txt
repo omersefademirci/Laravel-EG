@@ -1,0 +1,5 @@
+composer require tcg/voyoger
+php artisan voyager:install
+
+##Kurum eklenti için,
+php artisan voyager:install --with-dummy
