@@ -18,8 +18,9 @@ use App\Http\Controllers\ImageController;
 
 Route::prefix('/')->name('post.')->group(function(){
     Route::get('/',[IndexController::class,'index'])->name('home');
-    Route::get('/post/index',[ImageController::class,'index'])->name('content');   
+   
 });
+Route::get('/post/{id}',[IndexController::class,'postDetail'])->name('content');
     
 
 
